@@ -3,7 +3,7 @@ resource "aws_cloudwatch_log_group" "cognito_cloudtrail_logs" {
   name  = "cognito-cloudtrail-logs-${var.cluster_name}"
 }
 
-data "aws_iam_policy_document" "cloudtrail-assume-role-policy" {
+data "aws_iam_policy_document" "cloudtrail_assume_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
 
@@ -67,7 +67,7 @@ resource "aws_iam_role" "cloudtrail_to_cloudwatch" {
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  assume_role_policy = data.aws_iam_policy_document.cloudtrail-assume-role-policy.json
+  assume_role_policy = data.aws_iam_policy_document.cloudtrail_assume_role_policy.json
   inline_policy {
     name = "cloudwatch_write_permissions"
 
