@@ -1,9 +1,11 @@
 variable "zone_id" {
-  type = string
+  type        = string
+  description = "An ID of the root Route53 zone for creating sub-domains"
 }
 
 variable "domain" {
-  type = string
+  type        = string
+  description = "A domain for mapping"
 }
 
 variable "cluster_name" {
@@ -15,24 +17,6 @@ variable "tags" {
   type        = map(string)
   description = "A set of tags"
   default     = {}
-}
-
-variable "mfa_configuration" {
-  type        = string
-  description = "Turn MFA on or off. (Must be on of: ON, OFF, OPTIONAL)"
-  default     = "ON"
-}
-
-variable "advanced_security_mode" {
-  type        = string
-  description = "Sets Advanced Security for a user pool (OFF, AUDIT, ENFORCED)"
-  default     = "ENFORCED"
-}
-
-variable "acm_arn" {
-  type        = string
-  description = "The ARN of an ACM certificate to attach to the Load Balancer"
-  default     = ""
 }
 
 variable "invite_template" {

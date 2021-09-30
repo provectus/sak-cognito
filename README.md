@@ -22,10 +22,17 @@ resource aws_cognito_user_pool_client this {
 }
 ```
 
+## Requirements
+
+```
+terraform >= 0.15
+ ```
+
 ## Providers
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | >= 3.0 |
+| random | >= 3.1.0 |
 
 ## Inputs
 | Name | Description | Type | Default | Required |
