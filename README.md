@@ -5,7 +5,7 @@ The module creates base resources such as a user pool, Route53 record for a doma
 This example demonstrates how you can create an AWS Cognito client for your application.
 ``` hcl
 module "cognito" {
-  source = "git::https://github.com/provectus/sak-cognito.git"
+  source = "github.com/provectus/sak-cognito.git"
   domain = "example.com"
   zone_id = "FOOBAR123456"
 }
