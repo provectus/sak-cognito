@@ -5,9 +5,10 @@ The module creates base resources such as a user pool, Route53 record for a doma
 This example demonstrates how you can create an AWS Cognito client for your application.
 ``` hcl
 module "cognito" {
-  source = "github.com/provectus/sak-cognito.git"
-  domain = "example.com"
-  zone_id = "FOOBAR123456"
+  source       = "github.com/provectus/sak-cognito.git"
+  cluster_name = module.eks.cluster_id
+  domain       = "example.com"
+  zone_id      = "FOOBAR123456"
 }
 
 resource aws_cognito_user_pool_client this {
@@ -25,7 +26,7 @@ resource aws_cognito_user_pool_client this {
 ## Requirements
 
 ```
-terraform >= 0.15
+terraform >= 1.1
  ```
 
 ## Providers
